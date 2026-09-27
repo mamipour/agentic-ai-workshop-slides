@@ -1,0 +1,190 @@
+/* ============================================================
+   IntentEye-inspired theme for OpenClaw Workshop Slides
+   Colors: dark near-black bg + blue/purple/pink blobs
+   ============================================================ */
+
+/* --- Kill the theme's body background so our blobs show through --- */
+html,
+body,
+#app,
+#page-root {
+  background: #030712 !important;
+}
+
+/* --- Base overrides --- */
+:root {
+  --slidev-theme-primary: #a855f7;
+  --slidev-theme-secondary: #3b82f6;
+}
+
+/* Slide content must sit ABOVE the z-index:0 global-bottom blobs */
+.slidev-slide,
+.slidev-slide-content,
+.slidev-page,
+.slidev-slide-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Force transparent backgrounds on all slide layouts */
+.slidev-layout,
+.slidev-layout.default,
+.slidev-layout.center,
+.slidev-layout.cover,
+.slidev-layout.section,
+.slidev-layout.two-cols,
+.slidev-layout.intro,
+.slidev-layout.full {
+  background: transparent !important;
+  color: #f9fafb;
+  font-family: 'Inter', system-ui, sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Gradient text utility --- */
+.gradient-text {
+  background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Headings --- */
+.slidev-layout h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.slidev-layout h2 {
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+/* --- Section slide --- */
+.slidev-layout.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slidev-layout.section h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Glass cards --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* --- Gradient pill badges --- */
+.pill-blue {
+  background: linear-gradient(to right, rgba(59,130,246,0.2), rgba(168,85,247,0.2));
+  border: 1px solid rgba(99, 179, 237, 0.3);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #93c5fd;
+}
+
+/* --- Inline code --- */
+code {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 0.15em 0.4em;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85em;
+  color: #c4b5fd;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(to bottom, #3b82f6, #a855f7, #ec4899) 1;
+  padding: 1rem 1.5rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 12px 12px 0;
+  color: #d1d5db;
+  font-style: italic;
+}
+
+/* --- Links --- */
+a {
+  color: #93c5fd;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(147, 197, 253, 0.3);
+}
+
+/* --- Slide number --- */
+.slidev-page-number {
+  color: rgba(255,255,255,0.2) !important;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.65rem;
+}
+
+/* --- Subtle grid overlay on some slides --- */
+.slidev-layout.default::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slidev-layout.default > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Button style (for CTA slides) --- */
+.btn-gradient {
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-outline {
+  border: 2px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+/* --- Presenter notes styling --- */
+.slidev-note {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.7;
+}
+
+/* --- Transition polish --- */
+.slidev-vclick-target {
+  transition: all 0.3s ease;
+}

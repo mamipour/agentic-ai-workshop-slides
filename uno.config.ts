@@ -1,0 +1,40 @@
+import { defineConfig, presetIcons, presetUno } from 'unocss'
+
+export default defineConfig({
+  presets: [
+    presetUno(),
+    presetIcons({
+      scale: 1.2,
+      warn: true,
+    }),
+  ],
+  safelist: [
+    'i-carbon-alarm',
+    'i-carbon-calendar',
+    'i-carbon-chat',
+    'i-carbon-chat-bot',
+    'i-carbon-checkmark',
+    'i-carbon-chemistry',
+    'i-carbon-code',
+    'i-carbon-compare',
+    'i-carbon-decision-tree',
+    'i-carbon-document',
+    'i-carbon-email',
+    'i-carbon-flash',
+    'i-carbon-idea',
+    'i-carbon-link',
+    'i-carbon-machine-learning',
+    'i-carbon-notification',
+    'i-carbon-plug',
+    'i-carbon-portfolio',
+    'i-carbon-rocket',
+    'i-carbon-search',
+    'i-carbon-send',
+    'i-carbon-settings',
+    'i-carbon-shopping-cart',
+    'i-carbon-time',
+    'i-carbon-tools',
+    'i-carbon-view',
+    'i-carbon-warning-alt',
+  ],
+})
