@@ -138,7 +138,7 @@ They already know ChatGPT. They already tried prompting. They already saw Zapier
 layout: default
 ---
 
-# Three Things - The Difference That Matters
+# Four Levels - The Difference That Matters
 
 <div class="grid grid-cols-4 gap-3 mt-8">
   <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.25rem; text-align: center;">
